@@ -1,4 +1,6 @@
+from django.http import HttpResponse, Http404
 from django.shortcuts import render
+from django.template.defaultfilters import lower
 
 DATA = {
     'omlet': {
@@ -28,3 +30,32 @@ DATA = {
 #     'ингредиент2': количество2,
 #   }
 # }
+
+#__________________________________________________________________________
+
+def dish(requests, name):
+    servings = int(requests.GET.get("servings", 0))
+    eat = lower(name)
+
+    context = {
+      'recipe': {
+
+      }
+    }
+
+    try:
+        if eat in DATA:
+            context["recipe"] = DATA.get(eat)
+
+            if servings != 0:
+
+                for key in context["recipe"]:
+                    context['recipe'][key] *= servings
+
+        return render(requests, "calculator/index.html", context)
+
+    except KeyError:
+        raise Http404 ("Такого нет!")
+
+
+
