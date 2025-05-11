@@ -7,8 +7,8 @@ POST {{baseUrl}}/products/
 Content-Type: application/json
 
 {
-  "title": "Помидор",
-  "description": "Лучшие помидоры на рынке"
+  "title": "Рыба",
+  "description": "Лучшие рыбы на рынке"
 }
 
 ###
@@ -46,17 +46,22 @@ POST {{baseUrl}}/stocks/
 Content-Type: application/json
 
 {
-  "address": "мой адрес не дом и не улица, мой адрес сегодня такой: www.ленинград-спб.ru3",
+  "address": "Огромный склад",
   "positions": [
     {
-      "product": 2,
-      "quantity": 250,
-      "price": 120.50
+      "product": 5,
+      "quantity": 500,
+      "price": 90.50
     },
     {
-      "product": 3,
-      "quantity": 100,
-      "price": 180
+      "product": 6,
+      "quantity": 700,
+      "price": 190
+    },
+    {
+      "product": 4,
+      "quantity": 200,
+      "price": 45
     }
   ]
 }
@@ -64,7 +69,7 @@ Content-Type: application/json
 ###
 
 # обновляем записи на складе
-PATCH {{baseUrl}}/stocks/4/
+PATCH {{baseUrl}}/stocks/3/
 Content-Type: application/json
 
 {
