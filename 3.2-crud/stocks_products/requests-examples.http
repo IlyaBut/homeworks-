@@ -19,6 +19,12 @@ Content-Type: application/json
 
 ###
 
+# Получение складов
+GET {{baseUrl}}/stocks/
+Content-Type: application/json
+
+###
+
 # обновление продукта
 PATCH {{baseUrl}}/products/1/
 Content-Type: application/json
@@ -46,7 +52,7 @@ POST {{baseUrl}}/stocks/
 Content-Type: application/json
 
 {
-  "address": "Огромный склад",
+  "address": "Маленький склад",
   "positions": [
     {
       "product": 5,
@@ -69,7 +75,7 @@ Content-Type: application/json
 ###
 
 # обновляем записи на складе
-PATCH {{baseUrl}}/stocks/3/
+PATCH {{baseUrl}}/stocks/16/
 Content-Type: application/json
 
 {
