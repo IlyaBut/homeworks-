@@ -42,7 +42,7 @@ Content-Type: application/json
 ###
 
 # поиск продуктов по названию и описанию
-GET {{baseUrl}}/products/?search=помидор
+GET {{baseUrl}}/products/?search=рыба
 Content-Type: application/json
 
 ###
@@ -75,7 +75,7 @@ Content-Type: application/json
 ###
 
 # обновляем записи на складе
-PATCH {{baseUrl}}/stocks/16/
+PATCH {{baseUrl}}/stocks/12/
 Content-Type: application/json
 
 {
